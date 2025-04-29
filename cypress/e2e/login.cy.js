@@ -13,7 +13,7 @@ describe('Login Form Test', () => {
     cy.get('button[type="submit"]').click()
 
     cy.on('window:alert', (text) => {
-      expect(text).to.contains('Login efetuado com sucesso!')
+      expect(text).to.contains('Login successful!')
     })
   })
 })
