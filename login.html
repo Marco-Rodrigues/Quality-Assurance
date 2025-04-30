@@ -24,14 +24,27 @@
       const email = document.getElementById('email').value.trim();
       const password = document.getElementById('password').value.trim();
 
+      // Verifica campos vazios
       if (!email || !password) {
         alert('Please fill in all fields');
         return;
       }
 
+      // Validação de e-mail simples
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        alert('Please enter a valid email address');
+        return;
+      }
+
+      // Verificação de senha com no mínimo 6 caracteres
+      if (password.length < 6) {
+        alert('Password must be at least 6 characters long');
+        return;
+      }
+
       alert('Login successful!');
-      // Redirect after successful login
-      window.location.href = "dashboard.html";
+      window.location.href = 'dashboard.html';
     });
   </script>
 </body>
